@@ -63,6 +63,7 @@ RUN apt-get -y update
 RUN apt-get -y install ros-melodic-rqt-*
 RUN apt-get -y install ros-melodic-hector-slam
 RUN apt-get -y install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
+RUN apt-get -y install ros-melodic-smach-viewer
 # Do not edit from here
 
 # COPY ./docker-entrypoint.sh /docker-entrypoint.sh
