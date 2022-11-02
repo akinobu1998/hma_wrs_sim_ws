@@ -33,7 +33,7 @@ Please perform the docker installation described in the [WRS Simulator](https://
 ## Clone repository
 ```
 $ mkdir -p ~/ros_ws/hma && cd ~/ros_ws/hma
-$ git clone --recursive https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws.git
+$ git clone --recursive https://github.com/akinobu1998/hma_wrs_sim_ws.git
 ```
 
 ## Download weights for object recognition 
@@ -45,7 +45,9 @@ $ sh get-weights.sh
 ## Build docker
 ```
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
-$ docker build . -t hma_wrs_sim_ws
+$ export $UID
+$ docker compose build
+# $ docker build . -t hma_wrs_sim_ws
 ```
 
 # Usage

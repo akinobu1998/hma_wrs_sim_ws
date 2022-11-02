@@ -1,7 +1,11 @@
-# version: "2.4"
+version: "2.4"
 services:
   hma_wrs_sim_ws:
-    build: .
+    build:
+      context: .
+      args:
+        HOST_UID: ${UID}
+        HOST_USER: ${USER}
     image: hma_wrs_sim_ws:latest
     deploy:
       resources:
@@ -19,9 +23,9 @@ services:
       NVIDIA_VISIBLE_DEVICES: 0
     network_mode: "host"
     volumes:
-      - ./src:/home/ros_ws/hma/hma_wrs_sim_ws/src
+      - ./src:/home/${USER}/ros_ws/hma/hma_wrs_sim_ws/src
       - ./entrypoints:/entrypoints
-      - ./.bashrc_hma:/root/.bashrc_hma
+      - ./.bashrc_hma:/home/${USER}/.bashrc_hma
       - /tmp/.X11-unix:/tmp/.X11-unix
     runtime: nvidia
     privileged: true
