@@ -13,6 +13,6 @@ docker exec \
       --env ROS_MASTER_URI=$ROS_MASTER_URI \
       --env ROS_IP=$ROS_IP \
       --env TERM=xterm-color \
-      --workdir /home/ros_ws/hma/hma_wrs_sim_ws \
+      --workdir ~/ros_ws/hma/hma_wrs_sim_ws \
       $WS_CONTAINER_NAME \
       /entrypoints/bash.sh
